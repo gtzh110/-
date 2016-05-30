@@ -1,0 +1,703 @@
+Manifest-Version: 1.0
+Built-By: 1.2.3
+Created-By: Android Gradle 1.2.3
+
+Name: lib/x86_64/liblocSDK6a.so
+SHA1-Digest: V/Hr37q74TEO77OPuy5jGKgoQkQ=
+
+Name: lib/arm64-v8a/libBaiduMapSDK_map_v3_7_3.so
+SHA1-Digest: Jngx2tLqbdpHDPHUWYxXpZN3Vi8=
+
+Name: assets/main_topbtn_down.9.png
+SHA1-Digest: VnXcx1vInp4SHjuI2lVi1+EbFSE=
+
+Name: res/anim/push_bottom_out.xml
+SHA1-Digest: w3nkaa7YB0v/tmRa7CRFJrh8gdQ=
+
+Name: lib/armeabi-v7a/libRSSupport.so
+SHA1-Digest: 3Afnp4tcm7sRlZT6tR/OFycDYd4=
+
+Name: res/drawable-xhdpi-v4/shadow_left.png
+SHA1-Digest: OCbidZDJDGp5ba3CMDhdjZjuwAE=
+
+Name: assets/Icon_mark6.png
+SHA1-Digest: sLqXOe/Pkf8RC0la1z7FEJtfrbw=
+
+Name: res/drawable-xhdpi-v4/widget_bar_user_normal.png
+SHA1-Digest: L5D0tTsvgD2v1X9iQ05T04pkm8M=
+
+Name: assets/Icon_line_node.png
+SHA1-Digest: dK/CGB9imvWReQfRrkGjiDX2mkI=
+
+Name: res/drawable-xhdpi-v4/ptr_rotate_arrow.png
+SHA1-Digest: CJ0aAS8BIG+Y6XepXQTbSdgVQB4=
+
+Name: res/layout/expense_account_list_item.xml
+SHA1-Digest: LTuNlpHU+6P4JZ85AtAZRkCU/FY=
+
+Name: lib/x86/libBaiduMapSDK_base_v3_7_3.so
+SHA1-Digest: WmQj1AWzpTfSiCNWfP4ScZ7XGWM=
+
+Name: res/anim/slide_out_right.xml
+SHA1-Digest: Os3IiMGq2jaXlmk/R6IHLx/nyo8=
+
+Name: res/drawable-xhdpi-v4/login_phone_select.png
+SHA1-Digest: 2M9c5iACRg+vQ94M8ScAXWe3sZA=
+
+Name: res/drawable/object_add.png
+SHA1-Digest: oKN71G2aEijv3Y9+jdv4sViY/qY=
+
+Name: res/layout/member_content_view.xml
+SHA1-Digest: 4FfClK4/VPzQg7JZkGcInSdBK6k=
+
+Name: res/drawable-xhdpi-v4/ic_img_line_v.png
+SHA1-Digest: h9ZtTYHIDxFOlPBlUVGOrDDDI/M=
+
+Name: assets/Icon_mark10.png
+SHA1-Digest: brhelZiL1AZTlMx8OTzOldR2G7A=
+
+Name: res/drawable-xhdpi-v4/map_btn_goto_myposition.png
+SHA1-Digest: 9xKZ5P++57mjx2myRnYjO5A5GiQ=
+
+Name: lib/mips/libRSSupport.so
+SHA1-Digest: p7goTcslg13hXNCkID90NPczrOI=
+
+Name: res/drawable/list_item_selector.xml
+SHA1-Digest: MZAtdEXr7UXik6tQ9FISq7VnG/A=
+
+Name: res/drawable-xhdpi-v4/ic_setting_balance.png
+SHA1-Digest: ZQY3yWpy5F/7aFKTvVLRn7aydfQ=
+
+Name: res/layout/swipeback_layout.xml
+SHA1-Digest: PeOZ9psCUBxg12Im2TX5sxtWoh4=
+
+Name: lib/x86/libBaiduMapSDK_search_v3_7_3.so
+SHA1-Digest: 1eBJxc9Q6v+/EzJkRZWCl1QxNRs=
+
+Name: res/layout/layout_loading.xml
+SHA1-Digest: 6/EWtud759T+/He7qu9bhEVLKiM=
+
+Name: res/drawable/widget_bar_user_bg.xml
+SHA1-Digest: 6/bMJWOKBADPj2rEfZre4OPn/QU=
+
+Name: res/layout-v17/activity_house_detail.xml
+SHA1-Digest: H1IKfNgRzsPH79O/2uJ77iTjVYY=
+
+Name: res/layout/member_head_view.xml
+SHA1-Digest: inZcK1arjJtjjHZG72wtvgHpzsU=
+
+Name: res/drawable/footer_text_color.xml
+SHA1-Digest: iXY3z03TXHBP5GiaLvgcbD1OoNw=
+
+Name: res/drawable-xhdpi-v4/newer02.jpg
+SHA1-Digest: T3YIPKyZYMpTzY8W7dO0mkJryhc=
+
+Name: resources.arsc
+SHA1-Digest: 3VrV7ReMyArK/KAJHFjJx9bcTYU=
+
+Name: META-INF/services/javax.annotation.processing.Processor
+SHA1-Digest: 3rXvDkoLav51VuVUa2C9yRIh9Vo=
+
+Name: res/layout/activity_touch_gallery.xml
+SHA1-Digest: aAEjR0fdBU5Y4HAoUpwhnXp44NM=
+
+Name: lib/arm64-v8a/liblocSDK6a.so
+SHA1-Digest: +duZ09g91tvFVXUUeFVvEFrEwHs=
+
+Name: AndroidManifest.xml
+SHA1-Digest: G0vPCeQEJFaYPpHWEyyXQmsVItM=
+
+Name: com/j256/ormlite/android/LICENSE.txt
+SHA1-Digest: A3L+oNgVTIV6ZjksmgXBeIWe7uU=
+
+Name: lib/armeabi/libBaiduMapSDK_util_v3_7_3.so
+SHA1-Digest: ByqRrv1OogzRb1E4mGFxQ+H4ZMQ=
+
+Name: res/drawable/ios_7_dialog_button_bottom_right.xml
+SHA1-Digest: JNhPFsch21mgKB0DJb6VydENkfE=
+
+Name: lib/mips/librsjni.so
+SHA1-Digest: 0K84ZcC2ezkl9j88MQvlmTGGr4k=
+
+Name: res/anim/slide_in_from_bottom.xml
+SHA1-Digest: GEZEHMnqalPQTA8qqAgVMDMJQkE=
+
+Name: lib/arm64-v8a/libBaiduMapSDK_base_v3_7_3.so
+SHA1-Digest: RaJjojeiJioIBYooqq61HBTMaW8=
+
+Name: res/drawable-hdpi-v4/no_message_picture.png
+SHA1-Digest: AAH8X6sYJwR+9SVgBZU9d4XLBHA=
+
+Name: assets/Icon_mark3.png
+SHA1-Digest: 10OVxu8Hw/b6BCt9qISWaAsJCEU=
+
+Name: lib/armeabi/libBaiduMapSDK_search_v3_7_3.so
+SHA1-Digest: xrcAYCDsYPfNutNiA/ypyPKhTLw=
+
+Name: lib/arm64-v8a/libBaiduMapSDK_search_v3_7_3.so
+SHA1-Digest: CVrtvM81IKnNTjlI+SCsPzjMxF8=
+
+Name: res/drawable/expense_account_status_blue_background.xml
+SHA1-Digest: ONMzYBT7Pj7sDwD3OWrODBQqUM0=
+
+Name: assets/Icon_bus_station.png
+SHA1-Digest: ijMexAQ0II7KUGYEiaaiHPUGw44=
+
+Name: assets/cfg/a/CustomIndex
+SHA1-Digest: dGutVIfNVEsKscctYdvHTP3ac9s=
+
+Name: assets/main_icon_zoomin.png
+SHA1-Digest: MDS6SJ5t2e2iKxiwctOiuZ38u6U=
+
+Name: res/drawable/reject_dialog_back.xml
+SHA1-Digest: +LppEI11BaXI8uhfkeLCo3oERKE=
+
+Name: res/anim/imofan_round_progress_bar_1.xml
+SHA1-Digest: btysHQo9x18+rPRp0cqcZQKvjqY=
+
+Name: assets/Icon_walk_route.png
+SHA1-Digest: /ms0l+rN0Zkzr/GD/nbaJPgD5Zs=
+
+Name: res/drawable/login_rect_white.xml
+SHA1-Digest: /FwrXpJJquAZtLgWUzWUJIzN+wA=
+
+Name: res/anim/slide_out_to_bottom.xml
+SHA1-Digest: bS/xtcfC9FhwuDyIkNwIWEm03Eo=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: GvLKbbMIIELBzB0XtJS9SJvYPrk=
+
+Name: res/drawable-xhdpi-v4/img_name.png
+SHA1-Digest: vyhmWQFyGZfCFulT4T7YkaOnygU=
+
+Name: res/drawable/loading.png
+SHA1-Digest: Shp9eh09iOGqhXG6TEiPWJCSPjo=
+
+Name: assets/cfg/l/DVVersion.cfg
+SHA1-Digest: 9pfF9wKLomealta8UpHDj/lteYI=
+
+Name: res/anim/slide_in_right.xml
+SHA1-Digest: 9lXUmIdPaa5oRZvCS5fgWnH0QOs=
+
+Name: res/layout/fragment_member.xml
+SHA1-Digest: VQIPCdA0K26p4rFKKOVUcVIiqi0=
+
+Name: res/drawable/arrow_down.png
+SHA1-Digest: hL7LTQJTX94933PekUZSQ8MSOZk=
+
+Name: lib/armeabi/liblocSDK6a.so
+SHA1-Digest: RmLnGD1vu+jooNo4NZXAHOcS7yo=
+
+Name: res/drawable-v11/tab_strip_background_tab.xml
+SHA1-Digest: FjUWvvPFtIjcn4qGp+azBs8bFjA=
+
+Name: res/drawable-xhdpi-v4/shadow_right.png
+SHA1-Digest: HoZnpouQVd443osyCj8aWBxSBOE=
+
+Name: res/drawable/ios_7_dialog_button_bottom.xml
+SHA1-Digest: CvUEc+CROSz63aTcdtZt6WQgdJQ=
+
+Name: com/j256/ormlite/core/README.txt
+SHA1-Digest: 3JYGSX5lPn4zEegWfUgLQPiLpVk=
+
+Name: res/layout/activity_splash.xml
+SHA1-Digest: cQfcryPneSovkQzX9Zj1j66ikrw=
+
+Name: lib/armeabi-v7a/librsjni.so
+SHA1-Digest: c8M5IVwvkRhr4Bs05uQbkbiXEgY=
+
+Name: res/drawable/expense_account_status_red_background.xml
+SHA1-Digest: j10REwQStg8mXnG6d7JsZ4oTRMI=
+
+Name: res/drawable-xhdpi-v4/login_lock_select.png
+SHA1-Digest: fpRt5z4n2pWX/Jyk9n0hxeecEDI=
+
+Name: res/drawable/expense_account_status_grey_background.xml
+SHA1-Digest: lbUBjCTyGMGvatQfXyBd0DULWog=
+
+Name: assets/cfg/h/DVVersion.cfg
+SHA1-Digest: Q1ShB9R5dPmXl8in4aerZ6YsuHY=
+
+Name: assets/Icon_mark7.png
+SHA1-Digest: sKKD7pJZIL+05Zj8WfN2Iu+BqSU=
+
+Name: res/layout/layout_load_more.xml
+SHA1-Digest: /EwdBJmoKneHxk/dQJmaCArIYXA=
+
+Name: lib/x86/libBaiduMapSDK_util_v3_7_3.so
+SHA1-Digest: cbHTvzjGfzl6LC+WeQf5ikSkPXw=
+
+Name: lib/x86/libBaiduMapSDK_map_v3_7_3.so
+SHA1-Digest: I8dMBI4fWdgDNbF3StgjBHxDHTU=
+
+Name: res/drawable-hdpi-v4/default_ptr_flip.png
+SHA1-Digest: d9/B/5GdZXIebqoIXVKfe7hOg/o=
+
+Name: res/drawable/widget_bar_im_bg.xml
+SHA1-Digest: XVBWZxIwbYidyjriq67A+SudXKo=
+
+Name: res/anim/push_bottom_in.xml
+SHA1-Digest: 0fq7Q4kVhVZ8JaklqhVwsu9HnH0=
+
+Name: assets/cfg/h/DVHotMap.cfg
+SHA1-Digest: LQmgSNG41VbYnU1yOUfp4jS15Zs=
+
+Name: res/drawable/screen.png
+SHA1-Digest: d6QcnBuxMiu152Dr6btd8wEymaY=
+
+Name: res/layout/activity_header.xml
+SHA1-Digest: k6bFuDSLulkJreECmlf1ue0arKI=
+
+Name: res/drawable-hdpi-v4/default_image.png
+SHA1-Digest: yOenCI+BIXPZ5IlosAykqJpY8mo=
+
+Name: res/layout/activity_login.xml
+SHA1-Digest: ltgGot9hVk3y51Gl2sb4+6V3Pz4=
+
+Name: res/layout/fragment_demo_ptr.xml
+SHA1-Digest: zTZxfzj6P1x91PoD04qGw5pgN+0=
+
+Name: res/layout/layout_login_button.xml
+SHA1-Digest: JmDgdb50TUVN7XnPP1rYpss7k/U=
+
+Name: res/drawable/added_item.png
+SHA1-Digest: 3kJnGG0GoI4NgmpeowcBpITd9nk=
+
+Name: res/layout/activity_place_order.xml
+SHA1-Digest: RNgY5NjlLf5Yg8AabsWCi6PWpgw=
+
+Name: assets/lineDashTexture.png
+SHA1-Digest: +/nYUlVgUpTAXggl82nRmgpS0Bw=
+
+Name: res/layout/recommend_shop_list.xml
+SHA1-Digest: 7AJ+zsazhu/ccATaEb0V8bLxp5s=
+
+Name: assets/cfg/a/trafficstyle.sty
+SHA1-Digest: tgj3Jym/FLI5ewalS5MyKcRUs4o=
+
+Name: lib/x86_64/libBaiduMapSDK_util_v3_7_3.so
+SHA1-Digest: xoy5s7zL3K0vDWhyP56L1eKdl3U=
+
+Name: assets/cfg/l/DVHotMap.cfg
+SHA1-Digest: QDy7zXuBlzO1yvSe0qWNZURB6Z0=
+
+Name: res/drawable-xhdpi-v4/login_lock.png
+SHA1-Digest: 9CNlsGGnx7yC9TaDOEm8adikryI=
+
+Name: res/drawable-xhdpi-v4/ic_setting_arrow.png
+SHA1-Digest: 4Ig3Elje0W5ZP3Wfe/GRq/pzqWY=
+
+Name: res/drawable-hdpi-v4/circle_collect_normal.png
+SHA1-Digest: TJ343xnKsO/Dku64J8rjJVxhS2Y=
+
+Name: res/drawable-xhdpi-v4/newer01.jpg
+SHA1-Digest: S+eKlDadwTRnHdqfTam6Gzug6CY=
+
+Name: res/layout/sort_and_screen_layout.xml
+SHA1-Digest: bkaUx+/3fh2D+etaT4yQRoqZnJE=
+
+Name: res/layout/pull_to_refresh_header_vertical.xml
+SHA1-Digest: jzcdrGunu8jOF0jTI4X9SALdsys=
+
+Name: assets/Icon_subway_station.png
+SHA1-Digest: 8FR6NAAChDPCs8r2j53QSLY4GQg=
+
+Name: assets/Icon_mark2.png
+SHA1-Digest: NHBeA/o9A//4UUN6/FBMPcIK0Yc=
+
+Name: assets/main_icon_zoomout_dis.png
+SHA1-Digest: m3GfohDDe+ge31OgT78dtXkbWWs=
+
+Name: res/layout-v11/member_head_view.xml
+SHA1-Digest: EZkoFfwt61lr1y++4KIEYXbuPhg=
+
+Name: assets/cfg/a/mapstyle.sty
+SHA1-Digest: PL2cJ9n+RCDZMJNcU42yIwVoUic=
+
+Name: lib/armeabi-v7a/liblocSDK6a.so
+SHA1-Digest: DosDzmXZfofYMLlkMlAVovM5C4Y=
+
+Name: assets/Icon_road_nofocus.png
+SHA1-Digest: Uwg7gBCrh1S1FYmr4OscByLpvUg=
+
+Name: res/drawable/lead_filter.png
+SHA1-Digest: wU0i/BZkYoKAN1KLZo7X5+FtOgE=
+
+Name: res/drawable-xhdpi-v4/ic_calculator.png
+SHA1-Digest: B+C3J7SvLbsrJctAs1rB3R1cxZ0=
+
+Name: res/drawable/btn_back.xml
+SHA1-Digest: fSXzRDAxLK3i2rjPgEs+NqGGAjk=
+
+Name: assets/Icon_road_red_arrow.png
+SHA1-Digest: uEoDWUsxaFh/8MDvT6kB9z0jAO0=
+
+Name: res/drawable-hdpi-v4/circle_share_normal.png
+SHA1-Digest: s2eolyRLwX7YwKGEPAzkD9FVsjU=
+
+Name: res/drawable-xhdpi-v4/widget_bar_im_press.png
+SHA1-Digest: YqrO4hGOJAiTdCP0yOWagvABY7I=
+
+Name: lib/x86/liblocSDK6a.so
+SHA1-Digest: ZyFnzYKH/KAVl5IHjqg+NZssYXE=
+
+Name: res/drawable-xhdpi-v4/login_bg.png
+SHA1-Digest: fR4KVK2x56TlbDCvbK7jJmPkcCg=
+
+Name: res/layout/layout_main_footer.xml
+SHA1-Digest: KrC6da/h45Fdmh97Fq1ssInU6rc=
+
+Name: assets/cfg/l/DVDirectory.cfg
+SHA1-Digest: MLGsJRFZdWpB7xwTsOtISHu06yA=
+
+Name: assets/main_bottombtn_down.9.png
+SHA1-Digest: kNR4pry92/OCOF/5HW1WIb6Q9CE=
+
+Name: assets/cfg/l/DVSDirectory.cfg
+SHA1-Digest: sOaPWOFUuvEUjCsGXUO+73ZSNf0=
+
+Name: lib/armeabi-v7a/libBaiduMapSDK_base_v3_7_3.so
+SHA1-Digest: wGays9d+p/hU/5epQHISXvEXh7o=
+
+Name: res/layout/activity_house_detail.xml
+SHA1-Digest: 0YVQ0jvgPKZsQwuHK6+1EdlmQVQ=
+
+Name: assets/logo_h.png
+SHA1-Digest: NiIXDIWMhuIXwHmFVSalyGsn3g0=
+
+Name: res/drawable-xhdpi-v4/login_bg2.png
+SHA1-Digest: 4rL2VqJ6q1ZoPwL5IVW6a5J/dZk=
+
+Name: res/drawable/sort.png
+SHA1-Digest: YV4iuGMPZy6Yd0lk4mcg63aJTHE=
+
+Name: res/layout/sort_item.xml
+SHA1-Digest: 2H33J0BlwVpRF0IJLfCtBA/YWXU=
+
+Name: res/drawable-xhdpi-v4/default_ptr_rotate.png
+SHA1-Digest: t/EWNx5KCTTuRi9Z9ZeK0WKINew=
+
+Name: lib/x86_64/libBaiduMapSDK_base_v3_7_3.so
+SHA1-Digest: 28yvdPN+zMDXjyB7hnY16/rN0Sk=
+
+Name: res/drawable-xhdpi-v4/indicator_arrow.png
+SHA1-Digest: um4AJv5apISRneNtbh8WLLkpZRU=
+
+Name: res/drawable-mdpi-v4/default_ptr_rotate.png
+SHA1-Digest: mNU/zOaX6LQOamZJlvy+WBtK8E8=
+
+Name: assets/Icon_mark8.png
+SHA1-Digest: vJHMIXsi8SPI0zapgfknlq2wAkE=
+
+Name: res/drawable/login_back.png
+SHA1-Digest: 4lXRa8gHgSRF1jTImw4MYLzE1S4=
+
+Name: res/drawable-xhdpi-v4/newer04.jpg
+SHA1-Digest: eu4lYL9lFPTyf6zTj1XJMIEq6Us=
+
+Name: assets/main_bottombtn_up.9.png
+SHA1-Digest: cnDEMs+/85gASUt7/RfvYFY3rr4=
+
+Name: res/drawable-xhdpi-v4/ic_setting_setting.png
+SHA1-Digest: mS4hpe1oNRuVdsbd6XxK1FKlqAQ=
+
+Name: res/layout/cube_ptr_classic_default_header.xml
+SHA1-Digest: 8foEH0ZcdwXRFl98I4v99r9cFns=
+
+Name: res/drawable-hdpi-v4/btn_orange.9.png
+SHA1-Digest: Pi6PvN732v+dOpMjO4HD9OzhmsI=
+
+Name: res/layout/item_object_edit.xml
+SHA1-Digest: 9WhzzXulKi1KZeU/KUcPzTz2r0E=
+
+Name: assets/Icon_road_green_arrow.png
+SHA1-Digest: 7SiwhSFNOH0S3qFMlVc7ra7cVac=
+
+Name: assets/Icon_mark4.png
+SHA1-Digest: aO+806mdGudhrfRnuuWXiewohpQ=
+
+Name: assets/Icon_road_yellow_arrow.png
+SHA1-Digest: RDWwUfjcWrNv0o/SuGNkxuEz7/I=
+
+Name: res/drawable-xhdpi-v4/widget_bar_user_press.png
+SHA1-Digest: 3qWYzFtz+frXMLricRhtxaTf4SA=
+
+Name: assets/cfg/h/DVHotcity.cfg
+SHA1-Digest: jinm74DNd8BUC0KVMsSbJL6oy5w=
+
+Name: assets/main_topbtn_up.9.png
+SHA1-Digest: HKN7QK3DzAt8bykPXCYKgsWj1Mc=
+
+Name: lib/armeabi-v7a/libBaiduMapSDK_map_v3_7_3.so
+SHA1-Digest: dvxLm1buEp0eJJ+Apv40miyScRU=
+
+Name: res/layout/pull_to_refresh_header_horizontal.xml
+SHA1-Digest: LJYMZ7VwZj0T+kh4Q9fe6DvL6JU=
+
+Name: res/drawable-xhdpi-v4/widget_bar_im_normal.png
+SHA1-Digest: YCeVsrcOOF7TdtfrLIYMyscNBAE=
+
+Name: com/j256/ormlite/core/LICENSE.txt
+SHA1-Digest: A3L+oNgVTIV6ZjksmgXBeIWe7uU=
+
+Name: res/layout/activity_map.xml
+SHA1-Digest: ZIJUcXFvyIGd699TlF501E8bpjQ=
+
+Name: res/anim/slide_in_left.xml
+SHA1-Digest: n2PTkxNLZjvspbRxENXmA757vXs=
+
+Name: res/layout/fragment_map_house_item.xml
+SHA1-Digest: M5I0J3JmTy4dvnFBa/yOvVqcnlE=
+
+Name: res/drawable-hdpi-v4/btn_back_normal.9.png
+SHA1-Digest: /IiKEusW5QduvyXSCFy7lgxBvtc=
+
+Name: assets/logo_l.png
+SHA1-Digest: WwqUEYbcRtro7LUcYuofXSP0AWc=
+
+Name: res/drawable-hdpi-v4/btn_back_press.9.png
+SHA1-Digest: V0VTkXmRezjfkbk41WmXrEUp33U=
+
+Name: res/drawable-xhdpi-v4/ic_setting_helper.png
+SHA1-Digest: 2YzKA2JliacWynNBbKPrqx0xA9o=
+
+Name: res/drawable/login_pressed.png
+SHA1-Digest: 4lXRa8gHgSRF1jTImw4MYLzE1S4=
+
+Name: res/layout/fragment_layout.xml
+SHA1-Digest: UVf0rkJCaGvxm1hnrA34qm4e0EE=
+
+Name: res/anim/cycle.xml
+SHA1-Digest: VMHHqsYzHt7ge0Zbfmq0qmkVhrU=
+
+Name: res/drawable/expense_account_status_green_background.xml
+SHA1-Digest: FE2YfFhvUIIEs+CxsaukFKGuWeI=
+
+Name: res/layout/ios_7_dialog_two_actinos.xml
+SHA1-Digest: hqudl18m/93+0QwMj3RYO4faBDU=
+
+Name: res/drawable-hdpi-v4/list_view_divider.png
+SHA1-Digest: sOohLuZCarOasL5JdYzwr0l5aQw=
+
+Name: com/j256/ormlite/android/README.txt
+SHA1-Digest: NO0vpP55TdaqVX9LT/xlT1MssDQ=
+
+Name: lib/armeabi-v7a/libBaiduMapSDK_util_v3_7_3.so
+SHA1-Digest: dl38iem94usmThMuHIAiG8vEa2U=
+
+Name: res/drawable-mdpi-v4/indicator_arrow.png
+SHA1-Digest: CnmqGKOqSpfn7Eqj6xBVSoyuwq8=
+
+Name: lib/x86/librsjni.so
+SHA1-Digest: brpy+H1HKyh03nZe5N9RRmfXJ8o=
+
+Name: res/drawable/common_circle_orange.xml
+SHA1-Digest: ZSU3Mn1hL4Xuj4aWHEQDBZuHx2g=
+
+Name: assets/cfg/a/satellitestyle.sty
+SHA1-Digest: 5ld7g4AJjIty68BF01gGBDGQliA=
+
+Name: res/layout/top_sort_and_screen.xml
+SHA1-Digest: VABrSPSsb1RzUylcxup8OYHQtoM=
+
+Name: res/drawable/common_circle_gray.xml
+SHA1-Digest: JydJODyWUKqxL2klzZgjJN41oJ4=
+
+Name: res/drawable-hdpi-v4/circle_collect_unnormal.png
+SHA1-Digest: hwptAs2859gcb5QpB27JsWESHRg=
+
+Name: assets/Icon_mark1.png
+SHA1-Digest: RMqITX92JYEbzb7P/39eL+9AfT0=
+
+Name: assets/Icon_start.png
+SHA1-Digest: U0bO85R4iXAolnKrTCo/XWsbh5Q=
+
+Name: assets/main_icon_zoomout.png
+SHA1-Digest: xi3mWmqozWo0HjMa8zYNyTogCi4=
+
+Name: res/drawable-xhdpi-v4/img_address.png
+SHA1-Digest: 9vSdq1ZoMPBc0fK81YXtj37hzcI=
+
+Name: res/drawable/ios_7_dialog_button_bottom_left.xml
+SHA1-Digest: 6asbHPh1DJLrhjUePxWk1D1Z1mk=
+
+Name: res/drawable/login_back_xml.xml
+SHA1-Digest: ITrGg2CUuQ3gxvPDQnoexgXPYeM=
+
+Name: res/anim/shake.xml
+SHA1-Digest: euoEhD9rLQTtks+X0Cw9cze/c9Q=
+
+Name: assets/cfg/a/ResPack.cfg
+SHA1-Digest: 5+TfE0zfY/Flf0zG0tjJ8Xu8aC8=
+
+Name: res/drawable/indicator_bg_top.xml
+SHA1-Digest: w38xxJ+P3jw9Og/tdxyxBadToi0=
+
+Name: res/drawable-xhdpi-v4/ic_setting_record.png
+SHA1-Digest: rBpQ9NCcW1s9DTmgL867UYAiGNc=
+
+Name: res/drawable-xhdpi-v4/shadow_bottom.png
+SHA1-Digest: ZyzJwg+/5Zobn8ZhKyn5o4GLR5c=
+
+Name: res/drawable/item_background.xml
+SHA1-Digest: A0Dvsh//ZyDMONYGGrBlGvBb4IY=
+
+Name: lib/armeabi-v7a/libBaiduMapSDK_search_v3_7_3.so
+SHA1-Digest: 0vrslZf2De7/LdJN05meM3ENM+c=
+
+Name: res/layout/fragment_home_pager.xml
+SHA1-Digest: yH3vBRrsj7bYqprzO1uYHnOrLMc=
+
+Name: res/drawable-xhdpi-v4/default_ptr_flip.png
+SHA1-Digest: TM76EzvlTJvDXOEmB/KSr08NlPM=
+
+Name: res/drawable/list_divider.xml
+SHA1-Digest: lsDlgjtIMvEAOQehG5t78CSIQEc=
+
+Name: res/layout/long_line.xml
+SHA1-Digest: p20mX5OOFDsYgvTGd+p/CO7QzQM=
+
+Name: assets/icon_scale.9.png
+SHA1-Digest: qIUctUAkthqkey8qZs8wMv+8+ow=
+
+Name: res/drawable-xhdpi-v4/img_phone.png
+SHA1-Digest: o6FAYAJDvnKBr6ixaVNRgILO+Cg=
+
+Name: res/drawable/search_online.png
+SHA1-Digest: vJQ5w+lF5lWijXX7gJXWVqfVz3A=
+
+Name: lib/x86_64/libBaiduMapSDK_search_v3_7_3.so
+SHA1-Digest: 4nUAMVEKsKoSUT0O8Mfluy0IaVE=
+
+Name: res/drawable-xhdpi-v4/ic_img_user_default.png
+SHA1-Digest: gDb0UFg40YSVRL8SmE8tNsRpg+I=
+
+Name: res/drawable-xhdpi-v4/newer03.jpg
+SHA1-Digest: igULRcua0BRaPMvRWhBii7bvTIY=
+
+Name: res/drawable/indicator_bg_bottom.xml
+SHA1-Digest: Mufj9HkjdKJQ464UmugOuFeW6KI=
+
+Name: res/anim/slide_in_from_top.xml
+SHA1-Digest: 5karK4jgi0ipWbHhX/sibR2oXiQ=
+
+Name: assets/cfg/h/DVDirectory.cfg
+SHA1-Digest: MLGsJRFZdWpB7xwTsOtISHu06yA=
+
+Name: lib/x86_64/libBaiduMapSDK_map_v3_7_3.so
+SHA1-Digest: Oqvjg/5XshSzH/xWwXWP05WjuVM=
+
+Name: res/drawable-xhdpi-v4/btn_bg_gray.9.png
+SHA1-Digest: NBdF+DpbQcCL2y+jMZ+FeLlC+Ro=
+
+Name: res/drawable/sort_pressed.png
+SHA1-Digest: Ikv02rMmsd/BuCu9ieOrCMzXseU=
+
+Name: lib/x86/libRSSupport.so
+SHA1-Digest: PFH7CBLHLF5gyf3EAHSHiMKVqlo=
+
+Name: res/drawable/login_yzm_oval_shape_gray.xml
+SHA1-Digest: KIIJiRcI/Q1xTIXK2bHvp8zuDu8=
+
+Name: assets/cfg/h/DVSDirectory.cfg
+SHA1-Digest: sOaPWOFUuvEUjCsGXUO+73ZSNf0=
+
+Name: assets/Icon_mark5.png
+SHA1-Digest: fhXU60vSeWOscJdoLYlS5RHB4xU=
+
+Name: res/drawable-hdpi-v4/circle_share_unnormal.png
+SHA1-Digest: R+rgCSCikLfGSihXrWnANMKkxKc=
+
+Name: res/layout/layout_register_button.xml
+SHA1-Digest: 73DMH75ngE/tMukTZFK/AL6sYEg=
+
+Name: assets/cfg/l/DVHotcity.cfg
+SHA1-Digest: jinm74DNd8BUC0KVMsSbJL6oy5w=
+
+Name: assets/Icon_road_blue_arrow.png
+SHA1-Digest: iZ082ij5Px2QVyA4yuq8nZS8heM=
+
+Name: res/drawable-hdpi-v4/default_ptr_rotate.png
+SHA1-Digest: 5fhhKnc5nsXFo+qN0e2EGmx2oOg=
+
+Name: assets/main_icon_zoomin_dis.png
+SHA1-Digest: stSuzVtJDvR1SBnpDgH/oTyY5Nk=
+
+Name: res/layout/activity_personal_profile.xml
+SHA1-Digest: dvkhcZ9NO6q7i5bvTStFr08YkzA=
+
+Name: res/layout/layout_main_header.xml
+SHA1-Digest: dVxAKchvdeu0r7FlamyfPU2a7XY=
+
+Name: res/drawable-xhdpi-v4/splash_2.jpg
+SHA1-Digest: 1PjoTgVeHdUViInVNeSUECU+U0g=
+
+Name: res/drawable-xhdpi-v4/splash.jpg
+SHA1-Digest: cLthXvOEZZ2cbmVaT03wfpHvdrA=
+
+Name: res/layout/recommend_shop_list_item.xml
+SHA1-Digest: /UlB+e1h44mMRvQMVbrUukC4T+s=
+
+Name: lib/arm64-v8a/libBaiduMapSDK_util_v3_7_3.so
+SHA1-Digest: 2FflBj2qYluK4pvWMZ85EEqUaE0=
+
+Name: res/layout/member_zoom_view.xml
+SHA1-Digest: j4oKGCW28PIj/wVuBtvYdMX196Q=
+
+Name: res/drawable-xhdpi-v4/login_phone.png
+SHA1-Digest: 5fJsVMuURXsyTz25tD8XbWjEvN4=
+
+Name: assets/Icon_end.png
+SHA1-Digest: LBMaCfaSy+zZcqGqKqu/dkvhnK0=
+
+Name: res/drawable/button_login_blue.xml
+SHA1-Digest: W8ws9Gg+SYRQULc+bOY+AvWClyM=
+
+Name: assets/Icon_mark9.png
+SHA1-Digest: Hr7HMZrDP8VeXS+315R/nFkbCwY=
+
+Name: res/drawable-hdpi-v4/indicator_arrow.png
+SHA1-Digest: CnmqGKOqSpfn7Eqj6xBVSoyuwq8=
+
+Name: res/drawable/arrow_up.png
+SHA1-Digest: m9GLlwPuXSGDVY62sfRTCUqrKgA=
+
+Name: res/drawable-xhdpi-v4/ic_setting_attention.png
+SHA1-Digest: FQx/N8cQDakRZuysq4ASiT5YV7M=
+
+Name: lib/armeabi/libBaiduMapSDK_map_v3_7_3.so
+SHA1-Digest: 5jrqk/cjsw582T0V6ctD5gt3IYI=
+
+Name: res/anim/slide_out_left.xml
+SHA1-Digest: bruHaAjW0E6O94cNQmuK3UMzRS0=
+
+Name: res/layout/ios_7_dialog.xml
+SHA1-Digest: pwv5heBlxKVX/yoU1IUIpIrBB7Y=
+
+Name: res/layout/activity_register.xml
+SHA1-Digest: ldNIq2fg1BHwuG3xfqczhqlE/dk=
+
+Name: res/anim/slide_out_to_top.xml
+SHA1-Digest: H2VBEktr3J5Sd9d4O8lBQlWld28=
+
+Name: res/drawable-mdpi-v4/default_ptr_flip.png
+SHA1-Digest: d9/B/5GdZXIebqoIXVKfe7hOg/o=
+
+Name: res/drawable-xhdpi-v4/login_close.png
+SHA1-Digest: nLhQ94M/agDkYtj8HXgs1H7pJ8M=
+
+Name: lib/armeabi/libBaiduMapSDK_base_v3_7_3.so
+SHA1-Digest: ibslreos9gh1ieTFAgOIpZC0acE=
+
+Name: res/drawable/login_yzm_oval_shape.xml
+SHA1-Digest: dsU2pwzX8NDp/STC5zK+O4YHhhM=
+
+Name: res/drawable/edit_arrow.png
+SHA1-Digest: 1e5svEmeDnjsMcwY8paRDBW/i0k=
+
+Name: res/drawable/tab_strip_background_tab.xml
+SHA1-Digest: s+bHRFZGkwJBG/bMkK63WSGxtNA=
+
+Name: classes.dex
+SHA1-Digest: zGIObkPeh9n7qj6cRsgUKcVnFTc=
+

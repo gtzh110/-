@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEFEFF4"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/activity_header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="20dp"
+                android:background="#FFD1D1D1" />
+
+            <include
+                android:id="@+id/name"
+                layout="@layout/item_object_edit" />
+
+            <include
+                android:id="@+id/level"
+                layout="@layout/item_object_edit" />
+
+            <include
+                android:id="@+id/no_focus"
+                layout="@layout/item_object_edit"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+
+            <include
+                android:id="@+id/id"
+                layout="@layout/item_object_edit" />
+
+            <include
+                android:id="@+id/certification"
+                layout="@layout/item_object_edit" />
+
+            <include
+                android:id="@+id/phone"
+                layout="@layout/item_object_edit" />
+
+            <include
+                android:id="@+id/address"
+                layout="@layout/item_object_edit" />
+
+            <include
+                android:id="@+id/introduction"
+                layout="@layout/item_object_edit" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#FFD1D1D1" />
+
+            <include
+                android:id="@+id/button_submit"
+                layout="@layout/layout_login_button" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

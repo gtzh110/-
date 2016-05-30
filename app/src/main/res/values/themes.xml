@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme_Transparent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+    <style name="slide" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+    <style name="Animation.Slide" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+    <style name="Animation.SlideUpDown" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_up</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_down</item>
+        <item name="android:activityCloseEnterAnimation">@anim/hold</item>
+        <item name="android:activityOpenExitAnimation">@anim/hold</item>
+    </style>
+
+    <style name="Theme.Light.NoTitleBar.Workaround.Slide" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/Animation.Slide</item>
+    </style>
+    <style name="SlideTheme" parent="@style/NoTitle">
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowAnimationStyle">@style/Animation.Slide</item>
+    </style>
+    <!--<style name="NoTitle">-->
+    <!--&lt;!&ndash;<item name="android:windowIsTranslucent">true</item>&ndash;&gt;-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:textColorSecondary">#FF333333</item>-->
+    <!--<item name="android:textColorPrimary">#FF333333</item>-->
+    <!--<item name="android:textColorTertiary">#FF333333</item>-->
+    <!--<item name="android:textColorPrimaryInverse">#FF333333</item>-->
+    <!--<item name="android:textColorSecondaryInverse">#FF333333</item>-->
+    <!--<item name="android:textColorTertiaryInverse">#FF333333</item>-->
+    <!--<item name="android:textColorPrimaryDisableOnly">#FF333333</item>-->
+    <!--<item name="android:textColorPrimaryInverseDisableOnly">#FF333333</item>-->
+    <!--<item name="android:textColorPrimaryNoDisable">#FF333333</item>-->
+    <!--<item name="android:textColorSecondaryNoDisable">#FF333333</item>-->
+    <!--<item name="android:textColorPrimaryInverseNoDisable">#FF333333</item>-->
+    <!--<item name="android:textColorSecondaryInverseNoDisable">#FF333333</item>-->
+    <!--<item name="android:textColorHint">#FF333333</item>-->
+    <!--<item name="android:textColorHintInverse">#FF333333</item>        -->
+    <!--<item name="android:textColorHighlight">#FF333333</item>-->
+    <!--<item name="android:textColorHighlightInverse">#FF333333</item>-->
+    <!--<item name="android:textColorLink">#FF333333</item>-->
+    <!--<item name="android:textColorLinkInverse">#FF333333</item>-->
+    <!-- -->
+    <!--<item name="android:editTextColor">#FF333333</item>-->
+    <!--<item name="android:windowBackground">@android:color/white</item>-->
+    <!--<item name="android:textCursorDrawable">@null</item>-->
+    <!--</style>-->
+
+    <style name="Theme.Light.NoTitleBar.Workaround.UpDown" parent="@style/NoTitle">
+        <item name="android:windowAnimationStyle">@style/Animation.SlideUpDown</item>
+    </style>
+
+    <style name="Theme.Light.NoTitleBar.Workaround.SlideInNoOut" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+    </style>
+    <!--<style name="SlideTheme" parent="@style/NoTitle">-->
+    <!--<item name="android:windowAnimationStyle">@style/Animation.Slide</item>-->
+    <!--</style>-->
+    <style name="NoTitle">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColorSecondary">#FF333333</item>
+        <item name="android:textColorPrimary">#FF333333</item>
+        <item name="android:textColorTertiary">#FF333333</item>
+        <item name="android:textColorPrimaryInverse">#FF333333</item>
+        <item name="android:textColorSecondaryInverse">#FF333333</item>
+        <item name="android:textColorTertiaryInverse">#FF333333</item>
+        <item name="android:textColorPrimaryDisableOnly">#FF333333</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">#FF333333</item>
+        <item name="android:textColorPrimaryNoDisable">#FF333333</item>
+        <item name="android:textColorSecondaryNoDisable">#FF333333</item>
+        <item name="android:textColorPrimaryInverseNoDisable">#FF333333</item>
+        <item name="android:textColorSecondaryInverseNoDisable">#FF333333</item>
+        <item name="android:textColorHint">#FF333333</item>
+        <item name="android:textColorHintInverse">#FF333333</item>
+        <item name="android:textColorHighlight">#FF333333</item>
+        <item name="android:textColorHighlightInverse">#FF333333</item>
+        <item name="android:textColorLink">#FF333333</item>
+        <item name="android:textColorLinkInverse">#FF333333</item>
+        <item name="android:editTextColor">#FF333333</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+
+    <style name="Theme.Light.NoTitleBar.Workaround.Slide.Full" parent="@style/NoTitle">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <!-- <style name="NoTitleBar">
+        <item name="android:windowNoTitle">true</item>
+    </style> -->
+
+    <!-- <style name="Theme.Light.NoTitleBar.Workaround.Slide" parent="android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/Animation.Slide</item>
+    </style> -->
+    <!--<style name="Theme.Light.NoTitleBar.Workaround.Slide" parent="android:style/Theme.Light.NoTitleBar">-->
+    <!--<item name="android:windowAnimationStyle">@style/Animation.Slide</item>-->
+    <!--</style>-->
+    <style name="Theme.Light.NoTitleBar.Translucent" parent="@android:style/Theme.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/Animation.SlideUpDown</item>
+    </style>
+</resources>

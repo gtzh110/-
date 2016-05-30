@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="renderscript-v8">
+    <CLASSES>
+      <root url="jar://G:/adt-bundle-windows-x86-20140702/sdk/build-tools/22.0.1/renderscript/lib/renderscript-v8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
