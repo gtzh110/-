@@ -1,6 +1,7 @@
 package com.yuzhi.fine.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.activity.BaseActivity;
+import com.yuzhi.fine.activity.MapActivity;
 import com.yuzhi.fine.model.Order;
 import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.User;
@@ -77,12 +79,12 @@ public class UndoneOrderFragment extends Fragment {
         adapter = new QuickAdapter<Order>(context, R.layout.expense_account_list_item) {
             @Override
             protected void convert(BaseAdapterHelper helper, Order order) {
-                helper.setText(R.id.create_time, "下单时间："+order.getCreatedAt())
-                        .setText(R.id.address, "地址："+order.getAddress())
-                .setText(R.id.name,"客户："+order.getName())
-                .setText(R.id.phone,"客户手机号："+order.getPhoneNumber());
+                helper.setText(R.id.create_time, "下单时间：" + order.getCreatedAt())
+                        .setText(R.id.address, "地址：" + order.getAddress())
+                        .setText(R.id.name, "客户：" + order.getName())
+                        .setText(R.id.phone, "客户手机号：" + order.getPhoneNumber());
                 if (order.getWorker() != null) {
-                    helper.setText(R.id.worker, "工人："+order.getWorker().getName()).setText(R.id.worker_phone,"工人手机号："+order.getWorker().getPhoneNumber());
+                    helper.setText(R.id.worker, "工人：" + order.getWorker().getName()).setText(R.id.worker_phone, "工人手机号：" + order.getWorker().getPhoneNumber());
                 } else {
                     helper.setText(R.id.worker, "工人：未指定");
                 }
@@ -110,9 +112,9 @@ public class UndoneOrderFragment extends Fragment {
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
-                if (currentUser.getIsCustomer()){
-                    orderList = adapter.getData();
-                    if (orderList.size() > 0) {
+                orderList = adapter.getData();
+                if (currentUser.getIsCustomer()) {
+                    if (orderList.size() > 0 && (i - 1) != orderList.size()) {
                         final Order order = orderList.get(i - 1);
                         final User worker = order.getWorker();
                         if ((i - 1) != orderList.size() && orderList != null) {
@@ -128,6 +130,7 @@ public class UndoneOrderFragment extends Fragment {
 //                                        worker.setIsOccupied(false);
 //                                        worker.update(context);
                                             }
+
                                             @Override
                                             public void onFailure(int i, String s) {
                                                 BaseActivity.toast(context, s);
@@ -140,11 +143,14 @@ public class UndoneOrderFragment extends Fragment {
                             }
                         }
                     }
-                }else{
-
+                } else {
+                    if (orderList.size() > 0 && (i - 1) != orderList.size()) {
+                        Intent intent = new Intent(getActivity(), MapActivity.class);
+                        Order order = orderList.get(i - 1);
+                        intent.putExtra("address", order.getAddress());
+                        getActivity().startActivity(intent);
+                    }
                 }
-
-
 
             }
         });

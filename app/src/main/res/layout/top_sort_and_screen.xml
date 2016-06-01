@@ -38,7 +38,7 @@
                     android:ellipsize="end"
                     android:gravity="center_vertical"
                     android:singleLine="true"
-                    android:text="筛选"
+                    android:text="排序"
                     android:textColor="#FF292F33"
                     android:textSize="13sp" />
             </LinearLayout>

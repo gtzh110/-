@@ -65,18 +65,18 @@ public class SplashActivity extends BaseFragmentActivity {
         guideImage.setVisibility(View.VISIBLE);
         btn_worker = (Button) findViewById(R.id.btn_worker);
         btn_customer = (Button) findViewById(R.id.btn_customer);
-        /*btn_worker.setOnClickListener(new View.OnClickListener() {
+        btn_worker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 UIHelper.showLogin(SplashActivity.this, WOKER);
             }
-        });*/
-        btn_worker.setOnClickListener(new View.OnClickListener(){
+        });
+       /* btn_worker.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 UIHelper.showMap(SplashActivity.this);
             }
-        });
+        });*/
         btn_customer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

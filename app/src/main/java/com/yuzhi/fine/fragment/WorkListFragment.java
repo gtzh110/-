@@ -26,6 +26,7 @@ import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.User;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView;
+import com.yuzhi.fine.ui.pulltorefresh.extras.SoundPullEventListener;
 import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
 import com.yuzhi.fine.ui.quickadapter.QuickAdapter;
 import com.yuzhi.fine.utils.LogUtils;
@@ -49,6 +50,7 @@ public class WorkListFragment extends Fragment {
     private boolean isLoadAll = false;
     //    private View sort;
     private LinearLayout sort_layout;
+    private LinearLayout top_sort_screen;
     protected LinearLayout sort_and_filter_scroll, sort_area;
     protected TextView sort_text;
     protected ImageView sort_image;
@@ -72,6 +74,8 @@ public class WorkListFragment extends Fragment {
     List<AppliedWorker> workList;
     User currentUser;
     Order myOrder;
+    //暂无数据
+    LinearLayout no_result;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -88,9 +92,12 @@ public class WorkListFragment extends Fragment {
 //        initData();
         initView();
         loadData(0, STATE_REFRESH, sort);
+
     }
 
     void initView() {
+        top_sort_screen = (LinearLayout) view.findViewById(R.id.top_sort_and_screen);
+        no_result = (LinearLayout) view.findViewById(R.id.no_result);
         rotateAnimation = new RotateAnimation(-180, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotateAnimation.setDuration(300);
         rotateAnimation.setFillAfter(true);
@@ -108,6 +115,12 @@ public class WorkListFragment extends Fragment {
         };
 
         listView.withLoadMoreView();
+        //添加音效
+        SoundPullEventListener<ListView> soundPullEventListener=new SoundPullEventListener<ListView>(getActivity());
+        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.PULL_TO_REFRESH, R.raw.pull_event);
+//        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.REFRESHING, R.raw.refreshing_sound);
+//        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.RESET, R.raw.reset_sound);
+        listView.setOnPullEventListener(soundPullEventListener);
         listView.setAdapter(adapter);
         // 下拉刷新
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
@@ -238,14 +251,29 @@ public class WorkListFragment extends Fragment {
 //                BaseActivity.toast(context,"查询成功：共" + list.size() + "条数据");
 //                workList = list;
                 listView.onRefreshComplete();
-                listView.updateLoadMoreViewText(list);
+                if (actionType==STATE_MORE){
+                    listView.updateLoadMoreViewText(list);
+                }else{
+                    listView.updateLoadMoreViewText(list);
+                }
 //                isLoadAll = list.size() < 2;
 
                 if (actionType == STATE_REFRESH) {
                     curPage = 0;
                     adapter.clear();
                 }
+
+                //判断列表是否有数据，是否显示暂无数据
+                if (list.size() == 0) {
+//                    no_result.setVisibility(View.VISIBLE);
+//                    top_sort_screen.setVisibility(View.GONE);
+                }else{
+//                    top_sort_screen.setVisibility(View.VISIBLE);
+//                    no_result.setVisibility(View.GONE);
+                }
+
                 adapter.addAll(list);
+
 //                pno++;
                 curPage++;
             }
@@ -283,6 +311,7 @@ public class WorkListFragment extends Fragment {
 
             }
         });
+
 
 
     }

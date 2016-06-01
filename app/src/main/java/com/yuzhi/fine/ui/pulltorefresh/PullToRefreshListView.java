@@ -25,6 +25,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.ui.pulltorefresh.internal.EmptyViewMethodAccessor;
@@ -33,7 +34,8 @@ import com.yuzhi.fine.ui.pulltorefresh.internal.LoadingLayout;
 import java.util.List;
 
 public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView> {
-
+    private static final int STATE_REFRESH = 0;// 下拉刷新
+    private static final int STATE_MORE = 1;// 加载更多
     private LoadingLayout mHeaderLoadingView;
     private LoadingLayout mFooterLoadingView;
 
@@ -186,7 +188,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 
     @Override
     protected LoadingLayoutProxy createLoadingLayoutProxy(final boolean includeStart, final boolean includeEnd) {
-        LoadingLayoutProxy proxy = super.createLoadingLayoutProxy(includeStart, includeEnd);
+        LoadingLayoutProxy proxy =  super.createLoadingLayoutProxy(includeStart, includeEnd);
 
         if (mListViewExtrasEnabled) {
             final Mode mode = getMode();
@@ -337,14 +339,18 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 
     // ******************扩展代码，底部自动加载更多******************
     private View footerView;
+    private LinearLayout no_result;
     private ProgressBar progressBar;
     private TextView textView;
 
     public void withLoadMoreView() {
         if (footerView == null) {
             footerView = View.inflate(getContext(), R.layout.layout_load_more, null);
+            footerView.setLayoutParams(new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT,AbsListView.LayoutParams.MATCH_PARENT));
+            footerView.setOnClickListener(null);
             textView = (TextView) footerView.findViewById(R.id.text);
             progressBar = (ProgressBar) footerView.findViewById(R.id.progress);
+            no_result = (LinearLayout) footerView.findViewById(R.id.no_result);
         }
         getRefreshableView().removeFooterView(footerView);
         getRefreshableView().setFooterDividersEnabled(false);
@@ -353,7 +359,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
     }
     public void withNoMoreView(){
         if (footerView == null) {
-            footerView = View.inflate(getContext(), R.layout.layout_load_more, null);
+            footerView = (RelativeLayout) View.inflate(getContext(), R.layout.layout_load_more, null);
             textView = (TextView) footerView.findViewById(R.id.text);
             progressBar = (ProgressBar) footerView.findViewById(R.id.progress);
         }
@@ -361,7 +367,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
     }
 
     public void updateLoadMoreViewText(List data) {
-        if(getRefreshableView().getAdapter().getCount() == 0 && data.isEmpty()) {
+        if(getRefreshableView().getAdapter().getCount() == 3 && data.isEmpty()) {
             setLoadMoreViewTextNoData();
         } else if(data.size() <= 29) {//每次请求返回30条数据
             setLoadMoreViewTextNoMoreData();
@@ -374,8 +380,9 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
         if (progressBar.getVisibility() == View.VISIBLE) {
             return;
         }
+        no_result.setVisibility(GONE);
         textView.setText(R.string.pull_to_refresh_refreshing_label);
-        progressBar.setVisibility(VISIBLE);
+        progressBar.setVisibility(GONE);
     }
 
     public void setLoadMoreViewTextError() {
@@ -384,16 +391,21 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
     }
 
     public void setLoadMoreViewTextNoData() {
-        textView.setText(R.string.pull_to_refresh_no_data_label);
+        no_result.setVisibility(VISIBLE);
+        textView.setVisibility(View.GONE);
         progressBar.setVisibility(GONE);
     }
 
     public void setLoadMoreViewTextNoMoreData() {
         textView.setText(R.string.pull_to_refresh_no_more_data_label);
+        textView.setVisibility(View.VISIBLE);
+        no_result.setVisibility(GONE);
         progressBar.setVisibility(GONE);
     }
     public void setLoadMoreViewText(){
+        no_result.setVisibility(GONE);
         textView.setText("加载更多");
+        textView.setVisibility(View.VISIBLE);
         progressBar.setVisibility(GONE);
     }
 
