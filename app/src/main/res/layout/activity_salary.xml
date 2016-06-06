@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background1">
+
+    <include
+        android:id="@+id/header_salary"
+        layout="@layout/activity_header" />
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/month"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/transparent_half"
+            android:text=" 本 月可领工资为："
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/salary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00元"
+            android:textSize="30dp"
+            android:layout_marginLeft="70dp"
+            android:textColor="#f2680b"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/black"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="25dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/layout_describe1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_describe1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/expense_describe_background"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:textColor="#fff"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="订单数量"/>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#e1e8ed"
+                android:layout_marginRight="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparent_half"
+                android:text="本月完成的订单数量:"/>
+            <TextView
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:text="10"
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparent_half"
+                android:text="领取基本工资仍需完成订单:"/>
+            <TextView
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#f2680b"
+                android:text="10"
+                android:id="@+id/remain_nums"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparent_half"
+                android:text="领取奖励工资仍需完成订单:"/>
+            <TextView
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#f2680b"
+                android:text="10"
+                android:id="@+id/remain_nums1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/layout_describe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_describe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/expense_describe_background"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:textColor="#fff"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="评分"/>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#e1e8ed"
+                android:layout_marginRight="15dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/transparent_half"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="客户评分为:"/>
+            <TextView
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#f2680b"
+                android:text="10"
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

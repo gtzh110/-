@@ -1,6 +1,7 @@
 package com.yuzhi.fine.model;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobDate;
 
 /**
  * Created by lemon on 2016/4/6.
@@ -10,16 +11,57 @@ public class Order extends BmobObject {
     private String address;
     private String phoneNumber;
     private String content;
+    private Integer score;
     private Boolean isComplete = false;
+    private Boolean isComment = false;
+    private String comments;
     private User worker;//一个订单对应一个工人
     private User customer;//客户和自己的订单是一对一
+    private String endDate ;
+
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getEndDate() {
+
+        return endDate;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getScore() {
+
+        return score;
+    }
+
+    public void setIsComment(Boolean comment) {
+        isComment = comment;
+    }
+
+    public Boolean getIsComment() {
+
+        return isComment;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public String getComments() {
+
+        return comments;
+    }
+
 
 
 
     public void setCustomer(User customer) {
         this.customer = customer;
     }
-
 
 
     public User getCustomer() {

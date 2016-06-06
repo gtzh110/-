@@ -162,6 +162,7 @@ public class WorkListFragment extends Fragment {
                                             deleteWorker.delete(context, new DeleteListener() {
                                                 @Override
                                                 public void onSuccess() {
+                                                    loadData(0, STATE_REFRESH, 0);
                                                     LogUtils.e("log", "工人已从列表中移除");
 //                                                sp = SharedPreferences.getInstance();
 //                                                sp.putBoolean("ISAPPLIED",false);
@@ -262,18 +263,7 @@ public class WorkListFragment extends Fragment {
                     curPage = 0;
                     adapter.clear();
                 }
-
-                //判断列表是否有数据，是否显示暂无数据
-                if (list.size() == 0) {
-//                    no_result.setVisibility(View.VISIBLE);
-//                    top_sort_screen.setVisibility(View.GONE);
-                }else{
-//                    top_sort_screen.setVisibility(View.VISIBLE);
-//                    no_result.setVisibility(View.GONE);
-                }
-
                 adapter.addAll(list);
-
 //                pno++;
                 curPage++;
             }

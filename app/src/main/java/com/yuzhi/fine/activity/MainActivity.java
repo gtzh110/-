@@ -21,7 +21,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.listener.CountListener;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 public class MainActivity extends BaseFragmentActivity {
 
@@ -32,6 +34,7 @@ public class MainActivity extends BaseFragmentActivity {
     private boolean isApplied;
     private boolean isComplete;
     private User currentUser;
+    private int level;
 
     private RadioGroup group;
 
@@ -51,55 +54,17 @@ public class MainActivity extends BaseFragmentActivity {
             initFromSavedInstantsState(savedInstanceState);
         }
     }
-    public void init(){
-        currentUser = User.getCurrentUser(this,User.class);
-        if (currentUser != null){
-            BmobQuery<AppliedWorker> query = new BmobQuery<AppliedWorker>();
-            query.addWhereEqualTo("worker", currentUser);
-            query.findObjects(this, new FindListener<AppliedWorker>() {
-                @Override
-                public void onSuccess(List<AppliedWorker> list) {
-                    if (list.size() == 0) {
-                        isApplied = false;
-//                        LogUtils.e("isApplied","没有申请工作");
-                    } else {
-                        isApplied = true;
-//                        LogUtils.e("isApplied","申请了工作");
-                    }
-                }
 
-                @Override
-                public void onError(int i, String s) {
-//                    LogUtils.e("isApplied",s);
-                }
-            });
-            //查询订单是否已经完成
-            BmobQuery<Order> queryOrder = new BmobQuery<Order>();
-            if(currentUser.getIsCustomer()){
-                queryOrder.addWhereEqualTo("customer", currentUser);
-            }else{
-                queryOrder.addWhereEqualTo("worker", currentUser);
-            }
-            queryOrder.addWhereEqualTo("isComplete", false);
-            queryOrder.findObjects(this, new FindListener<Order>() {
-                @Override
-                public void onSuccess(List<Order> list) {
-                    if (list.size() == 0) {
-                        isComplete = true;
-//                        LogUtils.e("test 请求后",String.valueOf(isComplete));
-//                        LogUtils.e("isComplete", String.valueOf(isComplete));
-                    } else {
-                        isComplete = false;
-//                        LogUtils.e("isComplete", String.valueOf(isComplete));
-                    }
-                }
-                @Override
-                public void onError(int i, String s) {
-
-                }
-            });
+    public void init() {
+        currentUser = User.getCurrentUser(this, User.class);
+        if (currentUser != null) {
+            queryIsAppied();
+            queryIsCompleted();
+            queryOrderCount();
         }
+
     }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -121,7 +86,7 @@ public class MainActivity extends BaseFragmentActivity {
 
     private void initData() {
         currIndex = 0;
-        fragmentTags = new ArrayList<>(Arrays.asList("MainPagerFragment","MemberFragment"));
+        fragmentTags = new ArrayList<>(Arrays.asList("MainPagerFragment", "MemberFragment"));
     }
 
     private void initView() {
@@ -183,8 +148,10 @@ public class MainActivity extends BaseFragmentActivity {
             case 1:
                 MemberFragment fragmentB = new MemberFragment();
                 Bundle bundle = new Bundle();
-                bundle.putBoolean("ISAPPLIED",isApplied);
-                bundle.putBoolean("ISCOMPLETE",isComplete);
+                bundle.putBoolean("ISAPPLIED", isApplied);
+                bundle.putBoolean("ISCOMPLETE", isComplete);
+                bundle.putInt("LEVEL", level);
+                updateLevel(level);
                 fragmentB.setArguments(bundle);
                 return fragmentB;
             default:
@@ -199,5 +166,117 @@ public class MainActivity extends BaseFragmentActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    //查询当前是否申请工作
+    public void queryIsAppied() {
+        BmobQuery<AppliedWorker> query = new BmobQuery<AppliedWorker>();
+        query.addWhereEqualTo("worker", currentUser);
+        query.findObjects(this, new FindListener<AppliedWorker>() {
+            @Override
+            public void onSuccess(List<AppliedWorker> list) {
+                if (list.size() == 0) {
+                    isApplied = false;
+                } else {
+                    isApplied = true;
+                }
+            }
+
+            @Override
+            public void onError(int i, String s) {
+            }
+        });
+    }
+
+    //查询是否完成订单
+    public void queryIsCompleted() {
+        BmobQuery<Order> queryOrder = new BmobQuery<Order>();
+        if (currentUser.getIsCustomer()) {
+            queryOrder.addWhereEqualTo("customer", currentUser);
+        } else {
+            queryOrder.addWhereEqualTo("worker", currentUser);
+        }
+        queryOrder.addWhereEqualTo("isComplete", false);
+        queryOrder.findObjects(this, new FindListener<Order>() {
+            @Override
+            public void onSuccess(List<Order> list) {
+                if (list.size() == 0) {
+                    isComplete = true;
+                } else {
+                    isComplete = false;
+                }
+            }
+
+            @Override
+            public void onError(int i, String s) {
+
+            }
+        });
+    }
+
+    //查询登录用户累计完成的订单数量
+    public void queryOrderCount() {
+        BmobQuery<Order> query = new BmobQuery<>();
+        query.addWhereEqualTo("worker", currentUser);
+        query.count(this, Order.class, new CountListener() {
+            @Override
+            public void onSuccess(int i) {
+                int orderCount = i;
+                levelUp(orderCount);
+                LogUtils.e("总数", i + "");
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+
+            }
+        });
+    }
+
+    /*
+   * 1级 0-2
+   * 2级 3-5
+   * 3级 6-10
+   * 4级 11-18
+   * 5级 19-30
+   * 6级 31-50
+   * 7级 51-80
+   * 8级 暂无吧
+   * */
+    private void levelUp(int orderCount) {
+        if (orderCount <= 2) {
+            level = 1;
+        } else if (orderCount <= 5) {
+            level = 2;
+        } else if (orderCount <= 10) {
+            level = 3;
+        } else if (orderCount <= 18) {
+            level = 4;
+        } else if (orderCount <= 30) {
+            level = 5;
+        } else if (orderCount <= 50) {
+            level = 6;
+        } else if (orderCount <= 80) {
+            level = 7;
+        } else {
+            level = 8;
+        }
+    }
+    private void updateLevel(int level) {
+//        currentUser.setLevel(level);
+        User updateUser = new User();
+        updateUser.setLevel(level);
+        updateUser.update(this, currentUser.getObjectId(), new UpdateListener() {
+            @Override
+            public void onSuccess() {
+                LogUtils.e("UpdateLevel", "等级更新成功!");
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+                LogUtils.e("UpdateLevel", "等级更新失败:" + s);
+
+            }
+        });
     }
 }

@@ -25,14 +25,20 @@ import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView;
 import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
 import com.yuzhi.fine.ui.quickadapter.QuickAdapter;
+import com.yuzhi.fine.utils.LogUtils;
 import com.yuzhi.fine.utils.Utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.datatype.BmobDate;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.GetServerTimeListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
@@ -50,6 +56,7 @@ public class UndoneOrderFragment extends Fragment {
     private int curPage = 0;
     private static final int STATE_REFRESH = 0;// 下拉刷新
     private static final int STATE_MORE = 1;// 加载更多
+    String times;
 
     public TextView status;
     View no_result;
@@ -122,20 +129,34 @@ public class UndoneOrderFragment extends Fragment {
                                 Utils.dialogWithActions(context, "提示", "您确定该订单已经完成了吗？", "确定", "取消", null, new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        order.setIsComplete(true);
-                                        order.update(context, order.getObjectId(), new UpdateListener() {
+//                                        getTime(order);
+                                        Bmob.getServerTime(context, new GetServerTimeListener() {
                                             @Override
-                                            public void onSuccess() {
-                                                BaseActivity.toast(context, "订单已完成，请评价");
-//                                        worker.setIsOccupied(false);
-//                                        worker.update(context);
+                                            public void onSuccess(long time) {
+                                                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                                                times = formatter.format(new Date(time * 1000L));
+                                                LogUtils.e("TIME", times);
+                                                order.setEndDate(times);
+                                                order.setIsComplete(true);
+                                                order.update(context, order.getObjectId(), new UpdateListener() {
+                                                    @Override
+                                                    public void onSuccess() {
+                                                        loadData(0, STATE_REFRESH, 0);
+                                                        BaseActivity.toast(context, "订单已完成，请评价");
+                                                    }
+
+                                                    @Override
+                                                    public void onFailure(int i, String s) {
+                                                        BaseActivity.toast(context, s);
+                                                    }
+                                                });
                                             }
 
                                             @Override
-                                            public void onFailure(int i, String s) {
-                                                BaseActivity.toast(context, s);
+                                            public void onFailure(int code, String msg) {
                                             }
                                         });
+
                                     }
                                 });
                             } else {
@@ -254,4 +275,6 @@ public class UndoneOrderFragment extends Fragment {
         }
 
     }
+
+
 }

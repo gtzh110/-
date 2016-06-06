@@ -53,6 +53,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/SlideTheme"
             android:windowSoftInputMode="stateHidden|stateUnspecified" />
+        <activity
+            android:name=".activity.FeedBackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SlideTheme"
+            android:windowSoftInputMode="stateHidden|stateUnspecified" />
+        <activity
+            android:name=".activity.SalaryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SlideTheme"
+            android:windowSoftInputMode="stateHidden|stateUnspecified" />
 
         <service
             android:name="com.baidu.location.f"

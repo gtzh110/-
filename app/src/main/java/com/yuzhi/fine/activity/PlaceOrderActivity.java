@@ -127,19 +127,20 @@ public class PlaceOrderActivity extends BaseActivity {
                         toast("请输入正确的手机号码");
                         break;
                     }
+                    placeOrder.setEndDate("2016-06-04 10:00");
                     placeOrder.setPhoneNumber(phone.getText().toString());
                     placeOrder.setAddress(address.getText().toString());
                     if (!TextUtils.isEmpty(content.getText().toString())) {
                         placeOrder.setContent(content.getText().toString());
                     }
+//                    placeOrder.setEndDate(null);
                     placeOrder.setIsComplete(false);
                     placeOrder.setCustomer(currentUser);
                     placeOrder.save(this, new SaveListener() {
                         @Override
                         public void onSuccess() {
-                            toast("订单已成功提交");
+                            toast("订单提交成功，请选择工人");
                             finish();
-//                            Intent i = new Intent(this,)
                         }
 
                         @Override

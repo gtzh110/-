@@ -1,10 +1,10 @@
 package com.yuzhi.fine.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +16,9 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.activity.BaseActivity;
+import com.yuzhi.fine.activity.FeedBackActivity;
 import com.yuzhi.fine.model.Order;
-import com.yuzhi.fine.model.SearchParam;
 import com.yuzhi.fine.model.User;
-import com.yuzhi.fine.ui.UIHelper;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView;
 import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
@@ -37,7 +36,7 @@ import cn.bmob.v3.listener.FindListener;
  */
 public class DoneOrderFragment extends Fragment {
     private Activity context;
-
+    private List<Order> orderList;
     private int pno = 1;
     private boolean isLoadAll;
     private User currentUser;
@@ -45,6 +44,7 @@ public class DoneOrderFragment extends Fragment {
     private int curPage = 0;
     private static final int STATE_REFRESH = 0;// 下拉刷新
     private static final int STATE_MORE = 1;// 加载更多
+    private Order mOrder;
 
     public TextView status;
     View no_result;
@@ -74,12 +74,12 @@ public class DoneOrderFragment extends Fragment {
         adapter = new QuickAdapter<Order>(context, R.layout.expense_account_list_item) {
             @Override
             protected void convert(BaseAdapterHelper helper, Order order) {
-                helper.setText(R.id.create_time, "下单时间："+order.getCreatedAt())
-                        .setText(R.id.address, "地址："+order.getAddress())
-                        .setText(R.id.name,"客户："+order.getName())
-                        .setText(R.id.phone,"客户手机号："+order.getPhoneNumber());
+                helper.setText(R.id.create_time, "下单时间：" + order.getCreatedAt())
+                        .setText(R.id.address, "地址：" + order.getAddress())
+                        .setText(R.id.name, "客户：" + order.getName())
+                        .setText(R.id.phone, "客户手机号：" + order.getPhoneNumber());
                 if (order.getWorker() != null) {
-                    helper.setText(R.id.worker, "工人："+order.getWorker().getName()).setText(R.id.worker_phone,"工人手机号："+order.getWorker().getPhoneNumber());
+                    helper.setText(R.id.worker, "工人：" + order.getWorker().getName()).setText(R.id.worker_phone, "工人手机号：" + order.getWorker().getPhoneNumber());
                 } else {
                     helper.setText(R.id.worker, "工人：未指定");
                 }
@@ -105,14 +105,25 @@ public class DoneOrderFragment extends Fragment {
                 loadData(curPage, STATE_MORE, 0);
             }
         });
+        orderList = adapter.getData();
         // 点击事件
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 //                UIHelper.showHouseDetailActivity(context);
-                if (currentUser.getIsCustomer()){
-                    BaseActivity.toast(context,"订单完成后评价功能还在开发中，敬请期待！");
+                if ((i - 1) != orderList.size() && orderList != null) {
+//                    if (currentUser.getIsCustomer()){
+                    Intent intent = new Intent(getActivity(), FeedBackActivity.class);
+                    mOrder = orderList.get(i - 1);
+                    if (mOrder != null) {
+                        intent.putExtra("ORDER", mOrder);
+                    }
+                    getActivity().startActivityForResult(intent, 10);
+//                    }else{
+
+//                    }
                 }
+
             }
         });
 
@@ -137,9 +148,9 @@ public class DoneOrderFragment extends Fragment {
         listView.setLoadMoreViewTextLoading();
         currentUser = User.getCurrentUser(context, User.class);
         BmobQuery<Order> query = new BmobQuery<Order>();
-        if (currentUser.getIsCustomer()){
+        if (currentUser.getIsCustomer()) {
             query.addWhereEqualTo("customer", currentUser);
-        }else{
+        } else {
             query.addWhereEqualTo("worker", currentUser);
         }
         query.addWhereEqualTo("isComplete", true);
@@ -169,7 +180,7 @@ public class DoneOrderFragment extends Fragment {
             @Override
             public void onError(int code, String msg) {
                 // TODO Auto-generated method stub
-                BaseActivity.toast(context, "查询工人列表失败:" + msg);
+                BaseActivity.toast(context, "查询订单失败:" + msg);
             }
         });
     }
@@ -203,12 +214,25 @@ public class DoneOrderFragment extends Fragment {
             status.setTextColor(Color.parseColor("#ffff0f0f"));
             status.setBackgroundResource(R.drawable.expense_account_status_red_background);
             status.setText("施工中");
+        } else if (!order.getIsComment()) {
+            status.setTextColor(Color.parseColor("#FFA500"));
+            status.setBackgroundResource(R.drawable.status_orange);
+            status.setText("待评价");
         } else {
             status.setTextColor(Color.parseColor("#FF80d283"));
             status.setBackgroundResource(R.drawable.expense_account_status_green_background);
-            status.setText("待评价");
+            status.setText("已评价");
         }
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10) {
+            if (resultCode == 1) {
+                loadData(0, STATE_REFRESH, 0);
+            }
+        }
+    }
 }
