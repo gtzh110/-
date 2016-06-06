@@ -18,6 +18,10 @@ import com.yuzhi.fine.model.User;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
+
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 
 /**
@@ -39,13 +43,14 @@ public class PlaceOrderActivity extends BaseActivity {
     private Order placeOrder;
     private EditText unClicked;
     private User currentUser;
-
+    private boolean isComplete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place_order);
         initData();
+        queryIsCompleted();
         initView();
         bindClickListener();
     }
@@ -169,6 +174,37 @@ public class PlaceOrderActivity extends BaseActivity {
             default:
                 break;
         }
+
+    }
+
+    public void queryIsCompleted() {
+        BmobQuery<Order> queryOrder = new BmobQuery<Order>();
+        if (currentUser.getIsCustomer()) {
+            queryOrder.addWhereEqualTo("customer", currentUser);
+        } else {
+            queryOrder.addWhereEqualTo("worker", currentUser);
+        }
+        queryOrder.addWhereEqualTo("isComplete", false);
+        queryOrder.findObjects(this, new FindListener<Order>() {
+            @Override
+            public void onSuccess(List<Order> list) {
+                boolean isComplete;
+                if (list.size() == 0) {
+                    isComplete = true;
+                } else {
+                    isComplete = false;
+                }
+                if (!isComplete) {
+                    toast("您当前还有未完成的订单，暂不能下单");
+                    finish();
+                }
+            }
+
+            @Override
+            public void onError(int i, String s) {
+
+            }
+        });
 
     }
 

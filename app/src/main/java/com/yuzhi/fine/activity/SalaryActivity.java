@@ -24,8 +24,11 @@ public class SalaryActivity extends BaseActivity {
     @Bind(R.id.month)
     TextView month;
 
-    @Bind(R.id.salary)
-    TextView money;
+    @Bind(R.id.salary_base)
+    TextView baseMoney;
+    @Bind(R.id.salary_extra)
+    TextView extraMoney;
+
     @Bind(R.id.count)
     TextView count;
     @Bind(R.id.remain_nums)
@@ -34,18 +37,18 @@ public class SalaryActivity extends BaseActivity {
     TextView remainNums1;
     @Bind(R.id.score)
     TextView score;
-    private static final int BASESALARY = 4000;
+    private static final int BASESALARY = 3000;
     private static final int EXTRASALARY = 2000;
-    private static final int BASECOUNT = 10;
+    private static final int BASECOUNT = 15;
     private static final int EXTRACOUNT = 15;
 
     private int countText;
     private String scoreText;
     private int monthText;
-    private int moneyText;
+    private int baseMoneyText;
+    private int extraMoneyText;
     private int baseCount;
     private int extraCount;
-
 
 
     @Override
@@ -61,12 +64,18 @@ public class SalaryActivity extends BaseActivity {
         //标题栏
         confirm.setVisibility(View.INVISIBLE);
         title.setText("本月工资详情");
-        month.setText(monthText+" 月可领工资为:");
-        money.setText(moneyText+" 元");
-        count.setText(countText+"");
-        remainNums.setText(baseCount+"");
-        remainNums1.setText(extraCount+"");
-        score.setText(scoreText+"");
+        month.setText(monthText + " 月可领工资");
+        baseMoney.setText(baseMoneyText + " 元");
+        extraMoney.setText(extraMoneyText+" 元");
+        count.setText(countText + "");
+        if (baseCount==0){
+            remainNums.setText("已达标");
+        }else{
+            remainNums.setText(baseCount + "");
+        }
+        remainNums1.setText(extraCount + "");
+
+        score.setText(scoreText + "");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,28 +86,26 @@ public class SalaryActivity extends BaseActivity {
     }
 
     private void initData() {
-        if (getIntent()!=null){
+        if (getIntent() != null) {
             Intent i = getIntent();
-            countText = i.getIntExtra("count",0);
+            countText = i.getIntExtra("count", 0);
             scoreText = i.getStringExtra("score");
-            monthText = i.getIntExtra("month",0);
+            monthText = i.getIntExtra("month", 0);
         }
         calculateBaseSalary();
     }
 
     private void calculateBaseSalary() {
-        if (countText<BASECOUNT){
-            moneyText = 0;
-            baseCount = BASECOUNT-countText;
-            extraCount = EXTRACOUNT - countText;
-        }else if(countText<EXTRACOUNT){
-            moneyText = BASESALARY;
-            baseCount = 0;
-            extraCount = EXTRACOUNT - countText;
-        }else{
-            moneyText = BASESALARY+EXTRASALARY;
-            baseCount = 0;
+        if (countText < BASECOUNT) {
+            baseMoneyText = 0;
+            extraMoneyText = 0;
+            baseCount = BASECOUNT - countText;
             extraCount = 0;
+        } else {
+            baseMoneyText = BASESALARY;
+            baseCount = 0;
+            extraCount = countText - BASECOUNT;
+            extraMoneyText = extraCount * 100;
         }
     }
 

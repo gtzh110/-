@@ -23,6 +23,7 @@ import com.yuzhi.fine.model.User;
 import com.yuzhi.fine.ui.UIHelper;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView;
+import com.yuzhi.fine.ui.pulltorefresh.extras.SoundPullEventListener;
 import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
 import com.yuzhi.fine.ui.quickadapter.QuickAdapter;
 import com.yuzhi.fine.utils.LogUtils;
@@ -100,6 +101,10 @@ public class UndoneOrderFragment extends Fragment {
         };
 
         listView.withLoadMoreView();
+        //添加音效
+        SoundPullEventListener<ListView> soundPullEventListener=new SoundPullEventListener<ListView>(getActivity());
+        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.PULL_TO_REFRESH, R.raw.pull_to_refresh);
+        listView.setOnPullEventListener(soundPullEventListener);
         listView.setAdapter(adapter);
         // 下拉刷新
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
@@ -125,7 +130,7 @@ public class UndoneOrderFragment extends Fragment {
                         final Order order = orderList.get(i - 1);
                         final User worker = order.getWorker();
                         if ((i - 1) != orderList.size() && orderList != null) {
-                            if (order.getWorker() != null) {
+                            if (worker != null) {
                                 Utils.dialogWithActions(context, "提示", "您确定该订单已经完成了吗？", "确定", "取消", null, new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {

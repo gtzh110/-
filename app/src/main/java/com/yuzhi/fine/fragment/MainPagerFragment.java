@@ -1,5 +1,6 @@
 package com.yuzhi.fine.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -21,6 +22,7 @@ public class MainPagerFragment extends Fragment {
 
     private PagerSlidingTabStrip tabs;
     private ViewPager pager;
+    DoneOrderFragment doneOrderFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,7 +56,8 @@ public class MainPagerFragment extends Fragment {
             } else if (position == 1) {
                 return new UndoneOrderFragment();
             } else {
-                return new DoneOrderFragment();
+                doneOrderFragment = new DoneOrderFragment();
+                return doneOrderFragment;
             }
         }
 
@@ -66,6 +69,16 @@ public class MainPagerFragment extends Fragment {
         @Override
         public int getCount() {
             return TITLES.length;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10) {
+            if (resultCode == 1) {
+                doneOrderFragment.loadData(0, 0, 0);
+            }
         }
     }
 }

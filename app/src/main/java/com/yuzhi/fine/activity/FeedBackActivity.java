@@ -2,6 +2,7 @@ package com.yuzhi.fine.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -13,6 +14,9 @@ import com.yuzhi.fine.R;
 import com.yuzhi.fine.model.Order;
 import com.yuzhi.fine.model.User;
 import com.yuzhi.fine.model.UserInfo;
+import com.yuzhi.fine.utils.LogUtils;
+
+import org.w3c.dom.Text;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -80,6 +84,7 @@ public class FeedBackActivity extends BaseActivity {
                 mScore = rating;
             }
         });
+
         initView();
         initData();
         mBtn_submit.setOnClickListener(new View.OnClickListener() {
@@ -99,14 +104,14 @@ public class FeedBackActivity extends BaseActivity {
             mCustomer = mOrder.getCustomer();
             isCommment = mOrder.getIsComment();
         }
-        mCurrentUser = User.getCurrentUser(this,User.class);
+        mCurrentUser = User.getCurrentUser(this, User.class);
 
         infoValue1.setText(mOrder.getCreatedAt());
         infoValue2.setText(mOrder.getEndDate());
         infoValue3.setText(mWorker.getName());
         infoValue4.setText(mWorker.getPhoneNumber());
 
-        if (isCommment&&mCurrentUser.getIsCustomer()) {
+        if (isCommment && mCurrentUser.getIsCustomer()) {
             ratingBar.setRating(mOrder.getScore());
             editContent.setText(mOrder.getComments());
             textView.setText("  您已经打过分了");
@@ -114,18 +119,18 @@ public class FeedBackActivity extends BaseActivity {
             editContent.setEnabled(false);
             mBtn_submit.setEnabled(false);
             ((TextView) mBtn_submit.findViewById(R.id.text)).setText("已提交");
-        }else if (isCommment&&!mCurrentUser.getIsCustomer()){
+        } else if (isCommment && !mCurrentUser.getIsCustomer()) {
             ratingBar.setRating(mOrder.getScore());
             editContent.setText(mOrder.getComments());
-            textView.setText("客户为您评分："+mOrder.getScore()+"分");
+            textView.setText("客户为您评分：" + mOrder.getScore() + "分");
             ratingBar.setIsIndicator(true);
             editContent.setEnabled(false);
             mBtn_submit.setEnabled(false);
             mBtn_submit.setVisibility(View.GONE);
-        }else if(!isCommment&&!mCurrentUser.getIsCustomer()){
+        } else if (!isCommment && !mCurrentUser.getIsCustomer()) {
             titleComment.setText("客户尚未给出评价哦");
             mLinearLayout.setVisibility(View.GONE);
-        }else{
+        } else {
             //xml中已经初始化
         }
 
@@ -149,16 +154,16 @@ public class FeedBackActivity extends BaseActivity {
 
     private void commit() {
         if (!isCommment) {
-            if (mScore == 0 || mComment == "") {
+            if (mScore == 0 || TextUtils.isEmpty(editContent.getText().toString())) {
                 toast(this, "别忘了给师傅打分哦!");
             } else {
 //            mWorker.setScore(String.valueOf(mScore));
                 info = new UserInfo();
                 info.setWorker(mWorker);
                 mComment = editContent.getText().toString();
+                LogUtils.e("text", mComment);
                 info.setComment(mComment);
                 info.setOrder(mOrder);
-
                 info.setScore((int) mScore);
                 info.save(this, new SaveListener() {
                     @Override
@@ -171,7 +176,7 @@ public class FeedBackActivity extends BaseActivity {
                             @Override
                             public void onSuccess() {
                                 Intent i = new Intent();
-                                setResult(1,i);
+                                setResult(1, i);
                                 finish();
                             }
 

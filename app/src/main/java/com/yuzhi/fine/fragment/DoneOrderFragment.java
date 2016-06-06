@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,12 @@ import com.squareup.picasso.Picasso;
 import com.yuzhi.fine.R;
 import com.yuzhi.fine.activity.BaseActivity;
 import com.yuzhi.fine.activity.FeedBackActivity;
+import com.yuzhi.fine.activity.MainActivity;
 import com.yuzhi.fine.model.Order;
 import com.yuzhi.fine.model.User;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshBase;
 import com.yuzhi.fine.ui.pulltorefresh.PullToRefreshListView;
+import com.yuzhi.fine.ui.pulltorefresh.extras.SoundPullEventListener;
 import com.yuzhi.fine.ui.quickadapter.BaseAdapterHelper;
 import com.yuzhi.fine.ui.quickadapter.QuickAdapter;
 
@@ -90,6 +93,10 @@ public class DoneOrderFragment extends Fragment {
         };
 
         listView.withLoadMoreView();
+        //添加音效
+        SoundPullEventListener<ListView> soundPullEventListener=new SoundPullEventListener<ListView>(getActivity());
+        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.PULL_TO_REFRESH, R.raw.pull_to_refresh);
+        listView.setOnPullEventListener(soundPullEventListener);
         listView.setAdapter(adapter);
         // 下拉刷新
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
@@ -118,7 +125,9 @@ public class DoneOrderFragment extends Fragment {
                     if (mOrder != null) {
                         intent.putExtra("ORDER", mOrder);
                     }
-                    getActivity().startActivityForResult(intent, 10);
+//                    FragmentManager fragmentManager = getFragmentManager();
+//                    Fragment currentFragment = getVisibleFragment();
+                    getParentFragment().startActivityForResult(intent, 10);
 //                    }else{
 
 //                    }
@@ -143,7 +152,7 @@ public class DoneOrderFragment extends Fragment {
         });
     }
 
-    private void loadData(final int page, final int actionType, int index) {
+    public void loadData(final int page, final int actionType, int index) {
 //       进度条+正在加载
         listView.setLoadMoreViewTextLoading();
         currentUser = User.getCurrentUser(context, User.class);
@@ -226,13 +235,26 @@ public class DoneOrderFragment extends Fragment {
 
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 10) {
-            if (resultCode == 1) {
-                loadData(0, STATE_REFRESH, 0);
-            }
-        }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 10) {
+//            if (resultCode == 1) {
+//                loadData(0, STATE_REFRESH, 0);
+//            }
+//        }
+//    }
+
+//    public Fragment getVisibleFragment(){
+//        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//        List<Fragment> fragments = fragmentManager.getFragments();
+//        for(Fragment fragment : fragments){
+//            if(fragment != null && fragment.isVisible())
+//                return fragment;
+//        }
+//        return null;
+//    }
+    public void setRefresh(){
+        loadData(0, STATE_REFRESH, 0);
     }
 }

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@drawable/item_background"
     android:orientation="vertical"
     android:padding="10dp"
     >
@@ -13,50 +13,49 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/default_image" />
+        android:src="@drawable/ic_launcher" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/logo"
         android:layout_toRightOf="@+id/logo"
-        android:gravity="bottom">
+        android:gravity="center">
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp"
-            android:ellipsize="end"
-            android:singleLine="true"
             android:text="王师傅"
             android:textColor="#101010"
-            android:textSize="@dimen/text_size_16" />
-
+            android:textSize="20sp" />
         <TextView
             android:id="@+id/level"
+            android:padding="3dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="1 级"
-            android:textColor="#101010"
-            android:textSize="14sp" />
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="5 级"
+            android:background="@drawable/expense_account_status_red_background"
+            android:textColor="#ffff0f0f"
+            android:textSize="10sp" />
+
         <TextView
             android:id="@+id/score"
+            android:padding="3dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="评分 10"
-            android:textColor="#101010"
-            android:textSize="14sp" />
-
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="评分5.5"
+            android:background="@drawable/expense_account_status_red_background"
+            android:textColor="#ffff0f0f"
+            android:textSize="10sp" />
 
     </LinearLayout>
 

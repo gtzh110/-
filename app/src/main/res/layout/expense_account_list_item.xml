@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/item_background"
     >
     <ImageView
         android:id="@+id/bottom_line"
@@ -65,14 +65,22 @@
                 android:maxLines="2"
                 android:text="工程地址："
                 android:textColor="#292f33"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:paddingBottom="2dp"/>
+            <ImageView
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="#e1e8ed"
+                android:layout_marginRight="15dp"/>
 
 
             <TextView
             android:id="@+id/worker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:singleLine="true"
             android:text="改造工人：未选择"
@@ -105,12 +113,12 @@
             android:textColor="#333333"
             android:textSize="11sp" />
     </LinearLayout>
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/bottom_line2"
         android:layout_width="fill_parent"
         android:layout_height="1px"
         android:layout_below="@+id/relativeLayout"
         android:layout_marginBottom="1px"
-        android:background="#ffd4d4d4" />
+        android:background="#ffd4d4d4" />-->
 
 </LinearLayout>

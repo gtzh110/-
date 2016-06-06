@@ -117,7 +117,7 @@ public class WorkListFragment extends Fragment {
         listView.withLoadMoreView();
         //添加音效
         SoundPullEventListener<ListView> soundPullEventListener=new SoundPullEventListener<ListView>(getActivity());
-        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.PULL_TO_REFRESH, R.raw.pull_event);
+        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.PULL_TO_REFRESH, R.raw.pull_to_refresh);
 //        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.REFRESHING, R.raw.refreshing_sound);
 //        soundPullEventListener.addSoundEvent(PullToRefreshBase.State.RESET, R.raw.reset_sound);
         listView.setOnPullEventListener(soundPullEventListener);

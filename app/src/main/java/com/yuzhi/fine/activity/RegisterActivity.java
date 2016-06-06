@@ -100,6 +100,7 @@ public class RegisterActivity extends BaseActivity {
                     bu.setPassword(mPsd);
                     bu.setPhoneNumber(mPhone);
                     bu.setName(mName);
+                    bu.setSelfIntroduce("客户您好，选择我就是选择放心。");
                     bu.setScore("0");
                     bu.setLevel(Integer.valueOf(1));
                     if (TextUtils.equals(WOKER, identity)) {

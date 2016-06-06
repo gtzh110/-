@@ -128,7 +128,7 @@ public class MemberFragment extends Fragment {
                 UIHelper.showLogin(getActivity());
             }
         });*/
-        LogUtils.e("test外面", String.valueOf(isComplete));
+//        LogUtils.e("test外面", String.valueOf(isComplete));
         if (currentUser != null && !currentUser.getIsCustomer()) {
 //            LogUtils.e("test里面", String.valueOf(isComplete));
             if ((!isApplied) && isComplete) {
@@ -193,7 +193,32 @@ public class MemberFragment extends Fragment {
                                             }
                                         });
                                     } else {
-                                        BaseActivity.toast(context, "您有未完工的订单，暂时不能撤销申请！");
+                                        BmobQuery<Order> queryOrder = new BmobQuery<Order>();
+                                        queryOrder.addWhereEqualTo("worker", currentUser);
+                                        queryOrder.addWhereEqualTo("isComplete", false);
+                                        queryOrder.findObjects(getActivity(), new FindListener<Order>() {
+                                            @Override
+                                            public void onSuccess(List<Order> list) {
+                                                boolean canCancel;
+                                                if (list.size() == 0) {
+                                                    canCancel = true;
+                                                } else {
+                                                    canCancel = false;
+                                                }
+                                                if (canCancel){
+                                                    isApplied = false;
+                                                    initView();
+                                                }else{
+                                                    BaseActivity.toast(context, "您有未完工的订单，暂时不能撤销申请！");
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onError(int i, String s) {
+
+                                            }
+                                        });
                                     }
 
                                 }
@@ -238,13 +263,13 @@ public class MemberFragment extends Fragment {
             scrollView.getPullRootView().findViewById(R.id.place_order).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (isComplete) {
-                        isComplete = false;
-                        Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
-                        getActivity().startActivity(intent);
-                    } else {
-                        BaseActivity.toast(getActivity(), "您当前还有未完成的订单，暂不能下单");
-                    }
+//                    if (isComplete) {
+//                        isComplete = false;
+                    Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
+                    getActivity().startActivity(intent);
+//                    } else {
+//                        BaseActivity.toast(getActivity(), "您当前还有未完成的订单，暂不能下单");
+//                    }
 
                 }
             });
@@ -404,6 +429,10 @@ public class MemberFragment extends Fragment {
 
             }
         });
+    }
+
+    public void queryCancel(boolean cancel){
+
     }
 
 
